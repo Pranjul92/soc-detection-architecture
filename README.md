@@ -32,6 +32,35 @@ After achieving sufficient privileges, the attacker establishes command-and-cont
 communication with an external server to maintain persistence, execute commands remotely,
 and enable lateral movement or data exfiltration.
 
+## Detection Plane Mapping
+
+### Initial Access
+Primary detection plane: Email  
+Supporting planes: Endpoint  
+
+Initial access is most effectively detected at the email plane, where phishing characteristics,
+sender anomalies, and attachment behavior can be identified before execution occurs.
+Endpoint telemetry acts as a supporting plane to confirm user interaction or execution
+when email controls are bypassed.
+
+### Privilege Escalation
+Primary detection plane: Identity  
+Supporting planes: Endpoint  
+
+Privilege escalation is best detected through identity telemetry such as authentication events,
+privilege assignments, and role changes that indicate a transition to higher levels of access.
+Endpoint telemetry supports detection by identifying processes or actions associated with
+escalation attempts.
+
+### Command and Control
+Primary detection plane: Network  
+Supporting planes: Endpoint  
+
+Command and Control activity is primarily detected through network telemetry that reveals
+suspicious outbound connections, beaconing patterns, or anomalous destinations.
+Endpoint telemetry provides process-level context to increase confidence and reduce false positives.
+
+
 ## Detection Philosophy
 Detection is designed around attacker behavior rather than individual events,
 prioritizing confidence and intent over volume.

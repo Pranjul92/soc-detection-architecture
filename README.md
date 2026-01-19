@@ -1,8 +1,8 @@
-# Detection Strategy Aligned to MITRE ATT&CK
+# Detection Strategy Aligned with MITRE ATT&CK
 
 ## Objective
 Design a detection strategy that prioritizes early compromise detection,
-risk amplification points, and persistent attacker control.
+risk amplification points, and persistent attacker control for a mid size organisation.
 
 ## Prioritized MITRE Tactics
 

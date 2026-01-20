@@ -60,6 +60,22 @@ Command and Control activity is primarily detected through network telemetry tha
 suspicious outbound connections, beaconing patterns, or anomalous destinations.
 Endpoint telemetry provides process-level context to increase confidence and reduce false positives.
 
+## Detection Use Case: Suspicious Initial Access via Email Attachment
+
+Detection intent:
+Identify potential initial access attempts where a user interacts with an email attachment from an anomalous sender and executes a file on the endpoint within a short time window.
+
+Trigger condition:
+User interaction with an attachment from an untrusted or anomalous email sender followed by file execution on the endpoint.
+
+Correlation timeframe:
+5–15 minutes to account for realistic user behavior while maintaining detection confidence.
+
+False positives:
+Expected attachments from known senders, routine internal communications, automated reports, or legitimate software distribution workflows.
+
+Escalation criteria:
+Escalate when the sender or attachment cannot be validated and execution behavior deviates from known business activity, indicating potential malicious initial access.
 
 ## Detection Philosophy
 Detection is designed around attacker behavior rather than individual events,
